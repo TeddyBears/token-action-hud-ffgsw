@@ -56,7 +56,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} token
          * @param {string} actionId
          */
-        async handleAction(event, actionType, actor, token, actionId) {            
+        async handleAction(event, actionType, actor, token, actionId) {
             switch (actionType) {
                 case "crewSkill":
                     this.crewAction(event, actor, actionId); break;
@@ -248,7 +248,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
          * @param {object} weapon       The weapon
          */
         async rollSkill(event, actor, skillId, cardData = null, startingPool = { 'difficulty': 2 }, weapon) {
-            
+
             const actorSheet = await actor.sheet.getData();
             let pool = new DicePoolFFG(startingPool);
             const skillName = skillsList[skillId]?.label ? skillsList[skillId].label : actor.system.skills[skillId].label
@@ -335,14 +335,13 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
             }
 
             // Set skill
-            if (roleData?.roll_skill) {
-                skill = roleData?.roll_skill;
+            if (roleData[0]?.role_skill) {
+                skill = roleData[0]?.role_skill;
             } else if (vehicle?.system?.spaceShip) {
                 skill = "Piloting: Space";
             } else {
                 skill = "Piloting: Planetary";
             }
-
             const cardData = {
                 "crew": {
                     "name": this.actor.name,
@@ -391,7 +390,7 @@ Hooks.once('tokenActionHudCoreApiReady', async (coreModule) => {
 
             for (const [id, effectData] of Object.entries(STATUSEFFECT)) {
                 if (effectData.pooleffectdice) {
-                    
+
                     let addedValue = ActiveEffectCounter.getCounters(token).find(effect => effect.counter.parent.statuses.first() === effectData.id)?.getValue();
                     if (effectData.pooleffectaction === "add" && addedValue > 0) {
                         pool[effectData.pooleffectdice] += addedValue > 0 ? addedValue : 0

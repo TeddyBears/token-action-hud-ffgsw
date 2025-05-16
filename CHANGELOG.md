@@ -1,5 +1,10 @@
 # Changelog
 
+`12.4.5.1_906`
+
+* Fixes:
+  * fix problem with piloting crew skill
+
 `12.4.4.1_906`
 
 * Features:

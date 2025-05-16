@@ -8,7 +8,7 @@
       "flags": {}
     }
   ],
-  "version": "12.4.4.1_906",
+  "version": "12.4.5.1_906",
   "compatibility": {
     "minimum": "12",
     "verified": "12.331"
@@ -80,5 +80,5 @@
   "manifest": "https://raw.githubusercontent.com/TeddyBears/token-action-hud-ffgsw/refs/heads/main/module.json",
   "changelog": "https://github.com/TeddyBears/token-action-hud-ffgsw/blob/main/CHANGELOG.md",
   "readme": "https://github.com/TeddyBears/token-action-hud-ffgsw/blob/main/README.md",
-  "download": "https://github.com/TeddyBears/token-action-hud-ffgsw/archive/refs/tags/12.4.4.1_906.zip"
+  "download": "https://github.com/TeddyBears/token-action-hud-ffgsw/archive/refs/tags/12.4.5.1_906.zip"
 }
